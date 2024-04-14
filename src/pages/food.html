@@ -21,6 +21,30 @@
 
   <!-- Custom CSS for the carousel -->
   <style>
+    #filter-select {
+      padding: 5px 15px;
+      border-radius: 5px;
+      background-color: #f8f9fa;
+      border: 1px solid #ced4da;
+      width: 200px;
+      /* Adjust the width as needed */
+      font-size: 16px;
+    }
+
+    #filter-select:hover {
+      background-color: #e9ecef;
+    }
+
+    #filter-select:focus {
+      outline: none;
+      box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+    }
+
+    #filter-dropdown {
+      display: flex;
+      justify-content: center;
+    }
+
     .carousel-item img {
       max-width: 100%;
       max-height: 100%;
@@ -94,7 +118,7 @@
   </header>
 
   <main>
-    <div id="filter-dropdown" class="mb-3">
+    <div id="filter-dropdown" class="mb-3 mt-3 ml-2">
       <select id="filter-select" class="custom-select">
         <option value="january">January</option>
         <option value="february">February</option>
@@ -195,10 +219,18 @@
     document.addEventListener("DOMContentLoaded", function () {
       const filterSelect = document.getElementById("filter-select");
       const carouselIndicators = document.querySelectorAll(".carousel-indicators li");
+      const carousel = document.getElementById("carouselExampleIndicators");
 
       filterSelect.addEventListener("change", function () {
         const filter = filterSelect.value;
         updateCarousel(filter);
+      });
+
+      carousel.addEventListener("slid.bs.carousel", function () {
+        const activeItemIndex = $(".carousel-item.active").index();
+        const activeIndicator = document.querySelector(`.carousel-indicators li[data-slide-to="${activeItemIndex}"]`);
+        const filter = activeIndicator.getAttribute("id").replace("indicator-", "");
+        filterSelect.value = filter;
       });
 
       function updateCarousel(filter) {
