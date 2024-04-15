@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Grecko Bar &amp; Restaurant | Free Bootstrap Website Template</title>
+  <!-- Web app manifest -->
+  <link rel='manifest' href='../manifest.json'>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Fredericka+the+Great" rel="stylesheet">
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="../css/bootstrap.css">
+  <!-- Animate.css -->
+  <link rel="stylesheet" href="../css/animate.css">
+  <!-- Default stylesheet -->
+  <link rel="stylesheet" href="../css/main.css">
+
+  <!-- Custom CSS for the carousel -->
+  <style>
+    #filter-select {
+      padding: 5px 15px;
+      border-radius: 5px;
+      background-color: #f8f9fa;
+      border: 1px solid #ced4da;
+      width: 200px;
+      /* Adjust the width as needed */
+      font-size: 16px;
+    }
+
+    #filter-select:hover {
+      background-color: #e9ecef;
+    }
+
+    #filter-select:focus {
+      outline: none;
+      box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+    }
+
+    #filter-dropdown {
+      display: flex;
+      justify-content: center;
+    }
+
+    .carousel-item img {
+      max-width: 100%;
+      max-height: 100%;
+      width: auto;
+      height: auto;
+      margin: auto;
+    }
+  </style>
+</head>
+
+<body id="top">
+
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script>
+    // Use noConflict to release the $ variable
+    jQuery.noConflict();
+
+    // Use jQuery instead of $
+    jQuery(document).ready(function ($) {
+      $("#navbar-placeholder").load("nav.html");
+
+      // Now you can safely use $ as an alias for jQuery
+      // Example: $(selector).load(...)
+    });
+  </script>
+
+
+  <!-- Placeholder for the navbar -->
+  <div id="navbar-placeholder"></div>
+
+  <main>
+    <div id="filter-dropdown" class="mb-3 mt-3 ml-2 positon-fixed">
+      <select id="filter-select" class="custom-select">
+        <option value="january">January</option>
+        <option value="february">February</option>
+        <option value="march">March</option>
+        <option value="april">April</option>
+        <option value="may">May</option>
+        <option value="june">June</option>
+        <option value="july">July</option>
+        <option value="august">August</option>
+        <option value="september">September</option>
+        <option value="october">October</option>
+        <option value="november">November</option>
+        <option value="december">December</option>
+      </select>
+    </div>
+
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="">
+      <ol class="carousel-indicators">
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" id="indicator-january" class="active"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="1" id="indicator-february"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="2" id="indicator-march"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="3" id="indicator-april"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="4" id="indicator-may"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="5" id="indicator-june"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="6" id="indicator-july"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="7" id="indicator-august"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="8" id="indicator-september"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="9" id="indicator-october"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="10" id="indicator-november"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="11" id="indicator-december"></li>
+      </ol>
+
+      <div class="carousel-inner">
+        <div class="carousel-item active" id="carousel-january-filter">
+          <img class="d-block w-100"
+            src="https://drive.google.com/thumbnail?id=1_zjvDcF2RF63YyIg1CjNC1cSR0bsxtzs&sz=w1000" alt="January Image">
+        </div>
+        <div class="carousel-item" id="carousel-february-filter">
+          <img class="d-block w-100"
+            src="https://drive.google.com/thumbnail?id=1_zjvDcF2RF63YyIg1CjNC1cSR0bsxtzs&sz=w1000" alt="February Image">
+        </div>
+        <div class="carousel-item" id="carousel-march-filter">
+          <img class="d-block w-100"
+            src="https://drive.google.com/thumbnail?id=1_zjvDcF2RF63YyIg1CjNC1cSR0bsxtzs&sz=w1000" alt="March Image">
+        </div>
+        <div class="carousel-item" id="carousel-april-filter">
+          <img class="d-block w-100"
+            src="https://drive.google.com/thumbnail?id=1_zjvDcF2RF63YyIg1CjNC1cSR0bsxtzs&sz=w1000" alt="April Image">
+        </div>
+        <div class="carousel-item" id="carousel-may-filter">
+          <img class="d-block w-100"
+            src="https://drive.google.com/thumbnail?id=1_zjvDcF2RF63YyIg1CjNC1cSR0bsxtzs&sz=w1000" alt="May Image">
+        </div>
+        <div class="carousel-item" id="carousel-june-filter">
+          <img class="d-block w-100"
+            src="https://drive.google.com/thumbnail?id=1_zjvDcF2RF63YyIg1CjNC1cSR0bsxtzs&sz=w1000" alt="June Image">
+        </div>
+        <div class="carousel-item" id="carousel-july-filter">
+          <img class="d-block w-100"
+            src="https://drive.google.com/thumbnail?id=1_zjvDcF2RF63YyIg1CjNC1cSR0bsxtzs&sz=w1000" alt="July Image">
+        </div>
+        <div class="carousel-item" id="carousel-august-filter">
+          <img class="d-block w-100"
+            src="https://drive.google.com/thumbnail?id=1_zjvDcF2RF63YyIg1CjNC1cSR0bsxtzs&sz=w1000" alt="August Image">
+        </div>
+        <div class="carousel-item" id="carousel-september-filter">
+          <img class="d-block w-100"
+            src="https://drive.google.com/thumbnail?id=1_zjvDcF2RF63YyIg1CjNC1cSR0bsxtzs&sz=w1000"
+            alt="September Image">
+        </div>
+        <div class="carousel-item" id="carousel-october-filter">
+          <img class="d-block w-100"
+            src="https://drive.google.com/thumbnail?id=1_zjvDcF2RF63YyIg1CjNC1cSR0bsxtzs&sz=w1000" alt="October Image">
+        </div>
+        <div class="carousel-item" id="carousel-november-filter">
+          <img class="d-block w-100"
+            src="https://drive.google.com/thumbnail?id=1_zjvDcF2RF63YyIg1CjNC1cSR0bsxtzs&sz=w1000" alt="November Image">
+        </div>
+        <div class="carousel-item" id="carousel-december-filter">
+          <img class="d-block w-100"
+            src="https://drive.google.com/thumbnail?id=1_zjvDcF2RF63YyIg1CjNC1cSR0bsxtzs&sz=w1000" alt="December Image">
+        </div>
+      </div>
+
+      <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+  </main>
+
+
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script>
+    // Use noConflict to release the $ variable
+    jQuery.noConflict();
+
+    // Use jQuery instead of $
+    jQuery(document).ready(function ($) {
+      $("#footer-placeholder").load("footer.html");
+
+      // Now you can safely use $ as an alias for jQuery
+      // Example: $(selector).load(...)
+    });
+  </script>
+
+  <div id="footer-placeholder"></div>
+
+
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const filterSelect = document.getElementById("filter-select");
+      const carouselIndicators = document.querySelectorAll(".carousel-indicators li");
+      const carousel = document.getElementById("carouselExampleIndicators");
+
+      filterSelect.addEventListener("change", function () {
+        const filter = filterSelect.value;
+        updateCarousel(filter);
+      });
+
+      carousel.addEventListener("slid.bs.carousel", function () {
+        const activeItemIndex = $(".carousel-item.active").index();
+        const activeIndicator = document.querySelector(`.carousel-indicators li[data-slide-to="${activeItemIndex}"]`);
+        const filter = activeIndicator.getAttribute("id").replace("indicator-", "");
+        filterSelect.value = filter;
+      });
+
+      function updateCarousel(filter) {
+        carouselIndicators.forEach(function (indicator) {
+          indicator.classList.remove("active");
+        });
+
+        const activeIndicator = document.getElementById(`indicator-${filter}`);
+        activeIndicator.classList.add("active");
+
+        // Update content of the carousel item based on the filter
+        updateCarouselItemContent(filter);
+      }
+
+      function updateCarouselItemContent(filter) {
+        // Update content of the carousel item based on the filter
+        const activeCarouselItem = document.getElementById(`carousel-${filter}-filter`);
+        activeCarouselItem.innerHTML = getCarouselItemContent(filter);
+      }
+
+      function getCarouselItemContent(filter) {
+        // Update content of the carousel item based on the filter
+        const carouselItemContent = document.getElementById(`carousel-${filter}-filter`);
+        if (carouselItemContent) {
+          switch (filter) {
+            case "january":
+              return "<img src='https://drive.google.com/thumbnail?id=1_zjvDcF2RF63YyIg1CjNC1cSR0bsxtzs&sz=w1000' alt='January Image' class='d-block w-100'>";
+            case "february":
+              return "<img src='https://drive.google.com/thumbnail?id=1_zjvDcF2RF63YyIg1CjNC1cSR0bsxtzs&sz=w1000' alt='February Image' class='d-block w-100'>";
+            case "march":
+              return "<img src='https://drive.google.com/thumbnail?id=1_zjvDcF2RF63YyIg1CjNC1cSR0bsxtzs&sz=w1000' alt='March Image' class='d-block w-100'>";
+            case "april":
+              return "<img src='https://drive.google.com/thumbnail?id=1_zjvDcF2RF63YyIg1CjNC1cSR0bsxtzs&sz=w1000' alt='April Image' class='d-block w-100'>";
+            case "may":
+              return "<img src='https://drive.google.com/thumbnail?id=1_zjvDcF2RF63YyIg1CjNC1cSR0bsxtzs&sz=w1000' alt='May Image' class='d-block w-100'>";
+            case "june":
+              return "<img src='https://drive.google.com/thumbnail?id=1_zjvDcF2RF63YyIg1CjNC1cSR0bsxtzs&sz=w1000' alt='June Image' class='d-block w-100'>";
+            case "july":
+              return "<img src='https://drive.google.com/thumbnail?id=1_zjvDcF2RF63YyIg1CjNC1cSR0bsxtzs&sz=w1000' alt='July Image' class='d-block w-100'>";
+            case "august":
+              return "<img src='https://drive.google.com/thumbnail?id=1_zjvDcF2RF63YyIg1CjNC1cSR0bsxtzs&sz=w1000' alt='August Image' class='d-block w-100'>";
+            case "september":
+              return "<img src='https://drive.google.com/thumbnail?id=1_zjvDcF2RF63YyIg1CjNC1cSR0bsxtzs&sz=w1000' alt='September Image' class='d-block w-100'>";
+            case "october":
+              return "<img src='https://drive.google.com/thumbnail?id=1_zjvDcF2RF63YyIg1CjNC1cSR0bsxtzs&sz=w1000' alt='October Image' class='d-block w-100'>";
+            case "november":
+              return "<img src='https://drive.google.com/thumbnail?id=1_zjvDcF2RF63YyIg1CjNC1cSR0bsxtzs&sz=w1000' alt='November Image' class='d-block w-100'>";
+            case "december":
+              return "<img src='https://drive.google.com/thumbnail?id=1_zjvDcF2RF63YyIg1CjNC1cSR0bsxtzs&sz=w1000' alt='December Image' class='d-block w-100'>";
+            default:
+              return ""; // Default content
+          }
+        } else {
+          // Return a default image or message if the carousel item content is not found
+          return "<img src='https://via.placeholder.com/800x400' alt='No Image Available' class='d-block w-100'>";
+        }
+      }
+
+    });
+  </script>
+
+
+
+
+
+  <!-- Scroll to top button -->
+  <a id="back-to-top" class="back-to-top smooth-scroll" href="#top">
+    <i class="fa fa-long-arrow-up" aria-hidden="true"></i>
+  </a>
+
+  <!-- lazySizes -->
+  <script src="../js/lazysizes.min.js" async=""></script>
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous">
+    </script>
+  <!-- Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <!-- Your custom scripts -->
+  <script src="../js/site.js"></script>
+  <script src="../js/menu-animations.js"></script>
+</body>
+
+</html>
