@@ -2,7 +2,7 @@
 var food = document.querySelector('#food');
 var desserts = document.querySelector('#desserts');
 var drinks = document.querySelector('#drinks');
-var aboutDescription  = document.querySelector('#about-description');
+var aboutDescription = document.querySelector('#about-description');
 var card1 = document.querySelector('#card-1');
 var card2 = document.querySelector('#card-2');
 var card3 = document.querySelector('#card-3');
@@ -22,7 +22,7 @@ var options = {
 }
 
 function callback(entries, observer) {
-  entries.forEach(function(entry) {
+  entries.forEach(function (entry) {
     switch (entry.target.id) {
       case "food":
         if (entry.intersectionRatio > 0) {
