@@ -60,35 +60,7 @@
     // Get the list of navbar links and dropdown items
 
     // Function to add 'active' class to parent <li> element
-    function setActiveClass(link) {
-        // Get the list of navbar links
-        var navLinks = document.querySelectorAll('.navbar-nav .nav-link');
 
-        var dropdownMenu = document.querySelector('.nav-link.dropdown-toggle');
-
-        // Remove the 'active' class from all navbar links
-        navLinks.forEach(function (navLink) {
-            navLink.classList.remove('active');
-            dropdownMenu.classList.add('active')
-        });
-
-        // Add the 'active' class to the parent list item of the current link
-
-    }
-
-    // Loop through each navbar link
-    navLinks.forEach(function (link) {
-        // Get the href attribute value and remove the domain part
-        var href = link.getAttribute('href');
-        var cleanHref = href.substring(href.lastIndexOf('/') + 1);
-
-        // Check if the current URL ends with the href value
-        if (currentUrl.endsWith(cleanHref)) {
-            setActiveClass(link);
-
-
-        }
-    });
 
 
 
