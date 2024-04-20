@@ -57,11 +57,7 @@
     var navLinks = document.querySelectorAll('.navbar-nav .nav-link');
 
     var dropdownMenu = document.querySelector('.nav-link.dropdown-toggle');
-    console.log("babi")
-    // dropdownMenu.classList.add('active');
 
-
-    console.log(dropdownMenu)
 
     // Get all dropdown items
     var dropdownItems = document.querySelectorAll('.dropdown-item');
@@ -94,7 +90,7 @@
         // Remove the 'active' class from all navbar links
         navLinks.forEach(function (navLink) {
             navLink.parentNode.classList.remove('active');
-            dropdownMenu.classList.remove('active')
+            dropdownMenu.classList.add('active')
         });
 
         // Add the 'active' class to the parent list item of the current link
