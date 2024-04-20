@@ -90,26 +90,7 @@
 
         }
     });
-    var navLinks = document.querySelectorAll('.navbar-nav .nav-link');
 
-    var dropdownMenu = document.querySelector('.nav-link.dropdown-toggle');
-
-
-    // Get all dropdown items
-    var dropdownItems = document.querySelectorAll('.dropdown-item');
-
-    // Function to set the dropdown menu to active
-    function setDropdownActive() {
-        // Add the 'show' class to the dropdown menu
-        dropdownMenu.classList.add('active');
-        navLink.parentNode.classList.remove('active');
-
-    }
-
-    // Add click event listeners to each dropdown item
-    dropdownItems.forEach(function (item) {
-        item.addEventListener('click', setDropdownActive);
-    });
 
 
 
