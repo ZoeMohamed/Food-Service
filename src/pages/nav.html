@@ -68,12 +68,11 @@
 
         // Remove the 'active' class from all navbar links
         navLinks.forEach(function (navLink) {
-            navLink.parentNode.classList.remove('active');
+            navLink.classList.remove('active');
             dropdownMenu.classList.add('active')
         });
 
         // Add the 'active' class to the parent list item of the current link
-        link.parentNode.classList.add('active');
 
     }
 
