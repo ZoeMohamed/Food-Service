@@ -1,5 +1,5 @@
 <header>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top" style="height: 70px;">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
         <a class="navbar-brand animated pulse" href="#">
             <img src="https://drive.google.com/thumbnail?id=1_reCTzmg8sgRDUmK0_Ife18ni06Q9eEo&sz=w1000" width="70"
                 height="70" alt="Logo">
@@ -14,8 +14,8 @@
                     <a class="nav-link" href="/src/index.html">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item dropdown" id="menuNavItem">
-                    <a class="nav-link dropdown-toggle" href="/src/pages/" id="navbarDropdown" role="button"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
                         Menu
                     </a>
                     <div class="dropdown-menu text-center text-lg-left" aria-labelledby="navbarDropdown">
@@ -24,18 +24,18 @@
                         <a class="dropdown-item" href="/src/pages/snackbox.html">Snack Box</a>
                     </div>
                 </li>
-                <li class="nav-item" id="aboutNavItem">
+                <!-- <li class="nav-item" id="aboutNavItem">
                     <a class="nav-link" href="pages/about.html">About</a>
                 </li>
                 <li class="nav-item" id="albumNavItem">
                     <a class="nav-link" href="pages/album.html">Album</a>
-                </li>
+                </li> -->
                 <!-- <li class="nav-item">
           <a class="nav-link" href="pages/reservations.html">Reservations</a>
         </li> -->
-                <li class="nav-item" id="contactNavItem">
+                <!-- <li class="nav-item" id="contactNavItem">
                     <a class="nav-link" href="pages/contact.html">Contact</a>
-                </li>
+                </li> -->
             </ul>
             <div class="ml-auto mt-3">
                 <a class="nav-social mr-2" href="https://github.com/PictureElement">
@@ -52,21 +52,51 @@
     </nav>
 </header>
 <script>
+
+    var dropdownMenu = document.querySelector('.nav-link.dropdown-toggle');
+    console.log("babi")
+    dropdownMenu.classList.add('active');
+
+
+    console.log(dropdownMenu)
+
+    // Get all dropdown items
+    var dropdownItems = document.querySelectorAll('.dropdown-item');
+
+    // Function to set the dropdown menu to active
+    function setDropdownActive() {
+        // Add the 'show' class to the dropdown menu
+        dropdownMenu.classList.add('active');
+    }
+
+    // Add click event listeners to each dropdown item
+    dropdownItems.forEach(function (item) {
+        item.addEventListener('click', setDropdownActive);
+    });
+
     // Get the current URL
     var currentUrl = window.location.href;
 
     // Get the list of navbar links and dropdown items
     var navLinks = document.querySelectorAll('.navbar-nav .nav-link');
-    var dropdownItems = document.querySelectorAll('.dropdown-item');
 
     // Function to add 'active' class to parent <li> element
     function setActiveClass(link) {
+        // Get the list of navbar links
+        var navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+
+        var dropdownMenu = document.querySelector('.nav-link.dropdown-toggle');
+
         // Remove the 'active' class from all navbar links
         navLinks.forEach(function (navLink) {
             navLink.parentNode.classList.remove('active');
+            dropdownMenu.classList.remove('active')
         });
-        // Add the 'active' class to the parent list item
+
+        // Add the 'active' class to the parent list item of the current link
         link.parentNode.classList.add('active');
+        let x = link.parentNode.classList;
+
     }
 
     // Loop through each navbar link
@@ -78,22 +108,14 @@
         // Check if the current URL ends with the href value
         if (currentUrl.endsWith(cleanHref)) {
             setActiveClass(link);
+
+
         }
     });
 
-    // Loop through each dropdown item
-    dropdownItems.forEach(function (item) {
-        // Get the href attribute value and remove the domain part
-        var href = item.getAttribute('href');
-        var cleanHref = href.substring(href.lastIndexOf('/') + 1);
 
-        // Check if the current URL ends with the href value
-        if (currentUrl.endsWith(cleanHref)) {
-            // Add the 'active' class to the parent list item
-            setActiveClass(item);
-        }
-    });
 </script>
+
 
 
 
