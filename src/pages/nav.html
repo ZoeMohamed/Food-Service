@@ -54,6 +54,7 @@
     </nav>
 </header>
 <script>
+    var navLinks = document.querySelectorAll('.navbar-nav .nav-link');
 
     var dropdownMenu = document.querySelector('.nav-link.dropdown-toggle');
     console.log("babi")
@@ -69,6 +70,8 @@
     function setDropdownActive() {
         // Add the 'show' class to the dropdown menu
         dropdownMenu.classList.add('active');
+        navLink.parentNode.classList.remove('active');
+
     }
 
     // Add click event listeners to each dropdown item
