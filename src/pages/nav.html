@@ -58,8 +58,12 @@
     var currentUrl = window.location.href;
 
     var dropdownMenu = document.querySelector('.nav-link.dropdown-toggle')
+    var home = document.querySelector('.navbar-nav .nav-link')
 
-    console.log(currentUrl)
+    if (currentUrl == 'https://zora-foodservice.vercel.app/pages/lunchbox.html' || currentUrl == 'https://zora-foodservice.vercel.app/pages/snackbox.html' || currentUrl == 'https://zora-foodservice.vercel.app/pages/tumpeng.html') {
+        home.classList.remove('active')
+        dropdownMenu.classList.add('active')
+    }
 
     // Get the list of navbar links and dropdown items
 
