@@ -56,64 +56,52 @@
 <script>
     var navLinks = document.querySelectorAll('.navbar-nav .nav-link');
 
-    var dropdownMenu = document.querySelector('.nav-link.dropdown-toggle');
-
-
-    // Get all dropdown items
-    var dropdownItems = document.querySelectorAll('.dropdown-item');
-
-    // Function to set the dropdown menu to active
-    function setDropdownActive() {
-        // Add the 'show' class to the dropdown menu
-        dropdownMenu.classList.add('active');
-        navLink.parentNode.classList.remove('active');
-
-    }
-
-    // Add click event listeners to each dropdown item
-    dropdownItems.forEach(function (item) {
-        item.addEventListener('click', setDropdownActive);
-    });
-
-    // Get the current URL
-    var currentUrl = window.location.href;
-
-    // Get the list of navbar links and dropdown items
+    // Get the current URL path
+    var currentPath = window.location.pathname;
 
     // Function to add 'active' class to parent <li> element
     function setActiveClass(link) {
         // Get the list of navbar links
         var navLinks = document.querySelectorAll('.navbar-nav .nav-link');
 
-        var dropdownMenu = document.querySelector('.nav-link.dropdown-toggle');
-
         // Remove the 'active' class from all navbar links
         navLinks.forEach(function (navLink) {
             navLink.parentNode.classList.remove('active');
-            dropdownMenu.classList.add('active')
         });
 
         // Add the 'active' class to the parent list item of the current link
         link.parentNode.classList.add('active');
-
     }
 
     // Loop through each navbar link
     navLinks.forEach(function (link) {
-        // Get the href attribute value and remove the domain part
+        // Get the href attribute value
         var href = link.getAttribute('href');
-        var cleanHref = href.substring(href.lastIndexOf('/') + 1);
 
-        // Check if the current URL ends with the href value
-        if (currentUrl.endsWith(cleanHref)) {
+        // Check if the current URL path starts with the href value
+        if (currentPath.startsWith(href)) {
             setActiveClass(link);
-
-
         }
     });
 
+    // Get the dropdown menu
+    var dropdownMenu = document.querySelector('.nav-link.dropdown-toggle');
 
+    // Function to set the dropdown menu to active
+    function setDropdownActive() {
+        // Add the 'active' class to the dropdown menu
+        dropdownMenu.parentNode.classList.add('active');
+    }
+
+    // Get all dropdown items
+    var dropdownItems = document.querySelectorAll('.dropdown-item');
+
+    // Add click event listeners to each dropdown item
+    dropdownItems.forEach(function (item) {
+        item.addEventListener('click', setDropdownActive);
+    });
 </script>
+
 
 
 
