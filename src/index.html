@@ -17,6 +17,30 @@
   <link rel="stylesheet" href="css/animate.css">
   <!-- Default stylesheet -->
   <link rel="stylesheet" href="css/main.css">
+
+  <style>
+    .image-container {
+      width: 100%;
+      /* Adjust as needed */
+      height: 400px;
+      /* Set a fixed height */
+      overflow: hidden;
+      /* Hide overflow */
+      position: relative;
+    }
+
+    .image-container img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: auto;
+      /* Adjust width */
+      height: 100%;
+      /* Fill the height */
+      transform: translate(-50%, -50%);
+      /* Center the image */
+    }
+  </style>
 </head>
 
 <body id="top">
@@ -49,7 +73,8 @@
       </ol>
       <div class="carousel-inner">
         <div class="dark-overlay carousel-item active">
-          <img sizes="(max-width: 2560px) 100vw, 2560px"
+
+          <img sizes="(max-width: 2560px) 100vw, 2560px responsive-image"
             srcset="  
              https://res.cloudinary.com/dsjhjoiq3/image/upload/q_auto,f_auto,c_scale,w_320/v1736465216/WhatsApp_Image_2025-01-06_at_11.19.53_AM_ya8whw.jpg 320w,  
              https://res.cloudinary.com/dsjhjoiq3/image/upload/q_auto,f_auto,c_scale,w_618/v1736465216/WhatsApp_Image_2025-01-06_at_11.19.53_AM_ya8whw.jpg 618w,  
